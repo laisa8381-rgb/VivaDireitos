@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viva Direitos — Artigo</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6d6a9.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      margin: 0;
+      background: #fff;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 3px solid #ec7bac20;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #9d72c3;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #68c9a5;
+    }
+
+    #main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 3em 2em;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 2em;
+    }
+
+    aside {
+      flex: 1 1 300px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 2em;
+      height: fit-content;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    article {
+      flex: 3 1 600px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 2.5em;
+    }
+
+    article h1 {
+      color: #9d72c3;
+      margin-bottom: 0.5em;
+    }
+
+    article h2 {
+      color: #68c9a5;
+      margin-top: 1.5em;
+    }
+
+    article p {
+      color: #555;
+      line-height: 1.7em;
+      margin-top: 1em;
+    }
+
+    article img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1.5em;
+    }
+
+    .button {
+      display: inline-block;
+      background: #68c9a5;
+      color: white;
+      padding: 0.8em 1.5em;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #9d72c3;
+    }
+
+    aside h3 {
+      color: #9d72c3;
+      margin-bottom: 1em;
+    }
+
+    aside p {
+      color: #666;
+      line-height: 1.6em;
+    }
+
+    aside .sidebar-link {
+      display: block;
+      margin-top: 1em;
+      color: #68c9a5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    aside .sidebar-link:hover {
+      color: #ec7bac;
+    }
+
+    footer {
+      background: #f5f5f5;
+      text-align: center;
+      padding: 3em 2em;
+      margin-top: 4em;
+    }
+
+    footer h3 {
+      color: #9d72c3;
+      margin-bottom: 1em;
+    }
+
+    footer a {
+      color: #68c9a5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #ec7bac;
+    }
+
+    footer .social a {
+      color: #9d72c3;
+      font-size: 1.4em;
+      margin: 0 0.5em;
+      transition: 0.3s;
+    }
+
+    footer .social a:hover {
+      color: #68c9a5;
+    }
+
+    footer p {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html"><img src="images/logoviva.png" alt="Viva Direitos"></a>
+      <nav>
+       <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="left-sidebar.html">Sobre</a></li>
+        <li><a href="right-sidebar.html">Projetos</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="no-sidebar.html">Desenvolvedoras</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="main">
+    <aside>
+      <h3>Mais sobre o tema</h3>
+      <p>Explore outros artigos e materiais de apoio sobre cidadania, direitos e inclusão social.</p>
+      <a href="https://www.un.org/en/como-denunciar-viola%C3%A7%C3%B5es-de-direitos-humanos-%C3%A0-onu" class="sidebar-link" target="_blank">Como reconhecer violações de direitos humanos</a>
+      <a href="https://rbeducacaobasica.com.br/2018/10/23/a-formacao-de-sujeitos-de-direitos-o-projeto-mulheres-inspiradoras-e-o-poder-transformador-da-educacao/" class="sidebar-link" target="_blank">Histórias inspiradoras de transformação</a>
+      <a href="https://direitoshumanos.dpu.def.br/projetos/" class="sidebar-link" target="_blank">Projetos em andamento</a>
+    </aside>
+
+    <article>
+      <img src="images/sobre.jpg" alt="Foto ilustrativa sobre direitos humanos">
+      <h1>Construindo uma sociedade mais justa</h1>
+      <p>
+        A defesa dos direitos humanos é responsabilidade de toda a sociedade e exige empatia, educação e ação coletiva.
+        Colocar-se no lugar do outro permite compreender suas dificuldades e agir com solidariedade, enquanto a educação
+       inclusiva desperta a consciência sobre respeito, igualdade e participação social. Para transformar essa consciência em realidade,
+       é necessário o comprometimento conjunto de indivíduos, comunidades e governos na criação de políticas que promovam justiça
+       e oportunidades para todos. Assim, cada pessoa que assume seu papel na proteção da dignidade humana contribui para um futuro mais justo,
+       solidário e igualitário.
+      </p>
+
+      <h2>O papel da conscientização</h2>
+      <p>
+        A conscientização sobre os direitos e deveres humanos desempenha um papel essencial na construção de sociedades mais justas,
+         solidárias e democráticas. Quando as pessoas compreendem seus direitos fundamentais como liberdade, igualdade, segurança e
+         dignidade tornam-se mais capazes de reconhecê-los, defendê-los e exigir que sejam respeitados. Esse conhecimento fortalece
+         a autonomia individual e coletiva, permitindo que cada cidadão participe de forma ativa na vida social e política.
+      </p>
+
+      <p>
+       No entanto, conhecer apenas os direitos não é suficiente. A compreensão dos deveres humanos é igualmente necessária para manter o 
+       equilíbrio social. Deveres como respeitar o próximo, cumprir leis, agir com responsabilidade e promover a convivência pacífica asseguram 
+       que o exercício dos direitos não prejudique os demais. A conscientização, nesse sentido, funciona como uma ponte entre liberdade e 
+       responsabilidade.
+      </p>
+
+      <p>
+       Além disso, a educação em direitos humanos presente nas escolas, nas comunidades e nos meios de comunicação tem o poder de 
+       transformar mentalidades. Ela combate preconceitos, incentiva a empatia e fortalece a cultura de paz. Pessoas conscientes tendem 
+       a denunciar injustiças, apoiar causas sociais e participar de movimentos que promovem igualdade e inclusão.
+      </p>
+
+      <p>
+       Portanto, a conscientização não é apenas um processo de aprendizado, mas também uma ferramenta de transformação social. 
+       Quando indivíduos compreendem plenamente seus direitos e deveres, contribuem para a construção de uma sociedade mais humana, 
+       onde a dignidade de todos é reconhecida, protegida e valorizada.
+      </p>
+
+      <h2>Transformando realidades</h2>
+      <p>
+        A conscientização sobre direitos e deveres humanos é uma força capaz de transformar realidades. Quando uma pessoa descobre 
+        que possui direitos como dignidade, respeito, liberdade e igualdade ela passa a enxergar a si mesma de outra maneira. O que 
+        antes parecia destino imutável torna-se possibilidade de mudança, pois o conhecimento desperta coragem, fortalece vozes e incentiva 
+        atitudes que rompem ciclos de injustiça e exclusão.
+      </p>
+
+      <p>
+        Da mesma forma, compreender os deveres humanos  respeitar o outro, agir com responsabilidade, cumprir leis e promover a convivência 
+        — constrói um ambiente onde todos podem crescer. Ao reconhecer que cada ação tem impacto, indivíduos se tornam agentes de melhoria 
+        na comunidade. Pequenas atitudes conscientes, quando multiplicadas, produzem transformações significativas, fortalecendo laços, 
+        reduzindo conflitos e inspirando solidariedade.
+      </p>
+
+      <p>
+        A educação em direitos humanos tem papel decisivo nesse processo. Ao iluminar o que muitas vezes é silencioso ou invisível, 
+        ela ajuda pessoas a identificarem violações, questionarem desigualdades e participarem ativamente das mudanças sociais. Assim, 
+        a conscientização deixa de ser apenas conhecimento e se torna movimento — um movimento capaz de transformar vidas e construir 
+        futuros mais justos, humanos e igualitários para todos.
+      </p>
+
+      <h2>Participe!</h2>
+      <p> Participar de projetos sociais, culturais ou comunitários é uma oportunidade de transformar o entorno e, ao mesmo tempo, crescer 
+        como indivíduo. Ao se envolver em iniciativas que promovem educação, solidariedade, sustentabilidade ou apoio a grupos vulneráveis, 
+        cada pessoa descobre seu potencial de impacto e percebe que pequenas ações podem gerar grandes mudanças. O engajamento fortalece 
+        a autonomia, amplia a visão de mundo e cria conexões que inspiram novas formas de agir e pensar.</p>
+
+      <p>Além disso, integrar-se a projetos significa assumir um papel ativo na construção de uma sociedade mais justa. Quando mais pessoas 
+        se unem em torno de objetivos comuns, surgem soluções criativas, ambientes colaborativos e uma rede de apoio capaz de influenciar 
+        realidades inteiras. Participar é escolher não ficar à margem: é decidir fazer parte da mudança, contribuindo para um futuro mais 
+        humano, consciente e transformador.</p>
+
+    </article>
+  </section>
+
+  <footer>
+    <h3>Conecte-se conosco</h3>
+    <div class="social">
+      <a href="https://www.instagram.com/lai.sa_pl/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.instagram.com/cassiamunizz_/"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>© 2025 Viva Direitos — Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

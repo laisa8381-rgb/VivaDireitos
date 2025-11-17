@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Viva Direitos — Informação, apoio e conscientização sobre cidadania e direitos humanos.">
+  <title>Viva Direitos</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6d6a9.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background: #fff;
+      margin: 0;
+    }
+	
+    #header {
+      background: #fff;
+      border-bottom: 3px solid #ec7bac20;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 2em;
+    }
+
+    #header .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.6em;
+      text-decoration: none;
+    }
+
+    #header .logo-container img {
+      height: 80px;
+    }
+
+    #header .logo-container span {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2em;
+      color: #ec7bac;
+      font-weight: 600;
+    }
+
+    #nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5em;
+      align-items: center;
+    }
+
+    #nav ul li a {
+      text-decoration: none;
+      color: #9d72c3;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    #nav ul li a:hover {
+      color: #68c9a5;
+    }
+
+    #banner {
+      background: linear-gradient(120deg, #ec7bac10, #68c9a510);
+      text-align: center;
+      padding: 6em 1em;
+    }
+
+    #banner h2 {
+      color: #9d72c3;
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    #banner p {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 1.5em;
+    }
+
+    .button {
+      background-color: #68c9a5;
+      color: white;
+      padding: 0.8em 1.8em;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #9d72c3;
+    }
+
+    #features {
+      padding: 4em 2em;
+      text-align: center;
+    }
+
+    #features h2 {
+      color: #9d72c3;
+      margin-bottom: 2em;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2em;
+    }
+
+    .feature {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 2em 1.5em;
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      background: #fff;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .feature i {
+      font-size: 2.5em;
+      color: #ec7bac;
+      margin-bottom: 1em;
+    }
+
+    .feature h3 a {
+      color: #333;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .feature h3 a:hover {
+      color: #ec7bac;
+    }
+
+    #articles {
+      background: #fafafa;
+      padding: 4em 2em;
+    }
+
+    #articles h2 {
+      color: #9d72c3;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2em;
+    }
+
+    .article {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .article img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      padding: 1.5em;
+    }
+
+    .article-content h3 a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .article-content h3 a:hover {
+      color: #ec7bac;
+    }
+
+    .article-content p {
+      color: #666;
+    }
+
+    .article-content a {
+      margin-top: 1em;
+      display: inline-block;
+      color: #68c9a5;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .article-content a:hover {
+      color: #ec7bac;
+    }
+
+    #footer {
+      background: #f5f5f5;
+      padding: 3em 2em;
+      text-align: center;
+    }
+
+    #footer h3 {
+      color: #9d72c3;
+      margin-bottom: 1em;
+    }
+
+    #footer a {
+      color: #68c9a5;
+      text-decoration: none;
+    }
+
+    #footer a:hover {
+      color: #ec7bac;
+    }
+
+    #footer .social a {
+      color: #9d72c3;
+      margin: 0 0.5em;
+      font-size: 1.4em;
+      transition: 0.3s;
+    }
+
+    #footer .social a:hover {
+      color: #68c9a5;
+    }
+
+    #footer p {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-container">
+        <img src="images/logoviva.png" alt="Viva Direitos">
+        <span>Viva Direitos</span>
+      </a>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="left-sidebar.html">Sobre</a></li>
+          <li><a href="right-sidebar.html">Projetos</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="no-sidebar.html">Desenvolvedoras</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="banner">
+    <h2>Promovendo a cidadania e os direitos de todos.</h2>
+    <p>Informação, apoio e conscientização em um só lugar.</p>
+    <a href="#features" class="button">Explorar</a>
+  </section>
+
+  <section id="features">
+    <h2>Áreas de Atuação</h2>
+    <div class="feature-grid">
+
+      <div class="feature">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3><a href="direitos.html">Direitos Humanos</a></h3>
+        <p>Promoção e defesa dos direitos fundamentais de cada pessoa.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fas fa-users"></i>
+        <h3><a href="cidanania.html">Cidadania</a></h3>
+        <p>Engajamento social e exercício da cidadania plena.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fas fa-graduation-cap"></i>
+        <h3><a href="educacao.html">Educação e Inclusão</a></h3>
+        <p>Acesso igualitário à informação e oportunidades.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fas fa-venus-mars"></i>
+        <h3><a href="igualdade.html">Igualdade de Gênero</a></h3>
+        <p>Respeito, equidade e valorização das diferenças.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fas fa-bullhorn"></i>
+        <h3><a href="denuncias.html">Denúncia e Apoio</a></h3>
+        <p>Orientação e canais de ajuda para quem precisa.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fas fa-newspaper"></i>
+        <h3><a href="noticias.html">Notícias e Projetos</a></h3>
+        <p>Fique por dentro das ações e conquistas sociais.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="articles">
+    <h2>Artigos Recentes</h2>
+
+    <div class="article-grid">
+
+      <div class="article">
+        <img src="images/artigo1.jpg" alt="">
+        <div class="article-content">
+          <h3><a href="https://www.unicef.org/brazil/declaracao-universal-dos-direitos-humanos" target="_blank">Declaração Universal dos Direitos Humanos</a></h3>
+          <p>Adotada pela ONU em 10 de dezembro de 1948.</p>
+          <a href="https://www.unicef.org/brazil/declaracao-universal-dos-direitos-humanos" target="_blank">Ler mais →</a>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="images/artigo3.jpg" alt="">
+        <div class="article-content">
+          <h3><a href="https://meuartigo.brasilescola.uol.com.br/direito/direitos-humanos-uma-reflexao-dentro-do-direito-penal.htm" target="_blank">Direitos Humanos no Direito Penal</a></h3>
+          <p>Análise sobre a construção de direitos na modernidade.</p>
+          <a href="https://meuartigo.brasilescola.uol.com.br/direito/direitos-humanos-uma-reflexao-dentro-do-direito-penal.htm" target="_blank">Ler mais →</a>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="images/artigo2.jpg" alt="">
+        <div class="article-content">
+          <h3><a href="https://mundoeducacao.uol.com.br/sociologia/direitos-humanos.htm" target="_blank">Resumo: Direitos Humanos</a></h3>
+          <p>História, importância e articulação com a ONU.</p>
+          <a href="https://mundoeducacao.uol.com.br/sociologia/direitos-humanos.htm" target="_blank">Ler mais →</a>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="images/artigo4.jpg" alt="">
+        <div class="article-content">
+          <h3><a href="https://news.un.org/pt/news" target="_blank">ONU: Últimas Notícias</a></h3>
+          <p>Acompanhe decisões recentes sobre direitos humanos.</p>
+          <a href="https://news.un.org/pt/news" target="_blank">Ler mais →</a>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="images/artigo5.jpg" alt="">
+        <div class="article-content">
+          <h3><a href="https://www.hrw.org/pt/news" target="_blank">Direitos Humanos no Brasil</a></h3>
+          <p>Campanhas globais e denúncias sobre violações.</p>
+          <a href="https://www.hrw.org/pt/news" target="_blank">Ler mais →</a>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="images/artigo6.jpg" alt="">
+        <div class="article-content">
+          <h3><a href="https://www.amnesty.org/pt/latest/news/" target="_blank">Amnesty International</a></h3>
+          <p>Relatórios mundiais e iniciativas recentes.</p>
+          <a href="https://www.amnesty.org/pt/latest/news/" target="_blank">Ler mais →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="footer">
+    <h3>Fale Conosco</h3>
+    <p><a href="mailto:laisa8381@gmail.com">laisa8381@gmail.com</a></p>
+    <p><a href="mailto:cassiamunizdasilvaa@gmail.com">cassiamunizdasilvaa@gmail.com</a></p>
+
+    <div class="social">
+      <a href="https://www.instagram.com/lai.sa_pl/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.instagram.com/cassiamunizz_/"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <p>© 2025 Viva Direitos — Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Viva Direitos</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a2e0e6d6a9.js" crossorigin="anonymous"></script>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header {
+    background: #fff;
+    border-bottom: 3px solid #ec7bac20;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  #header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    text-decoration: none;
+    padding: 0.2em 2em;
+  }
+
+  #header .logo-container img {
+    height: 80px;
+    width: auto;
+  }
+
+  #header .logo-container span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    color: #ec7bac;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  #nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+  }
+
+  #nav ul li a {
+    text-decoration: none;
+    color: #9d72c3;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  #nav ul li a:hover {
+    color: #68c9a5;
+  }
+
+  header .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 2em;
+  }
+
+  #banner {
+    background: linear-gradient(120deg, #ec7bac10, #68c9a510);
+    text-align: center;
+    padding: 4em 1em;
+  }
+
+  #banner h2 {
+    color: #9d72c3;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  .quiz-container {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1.5em;
+  }
+
+  .question-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2em;
+    padding: 2em 1.5em;
+    transition: transform 0.2s;
+  }
+
+  .question-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .question {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 1em;
+  }
+
+  .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .answers button {
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #9d72c3;
+    background-color: #fff;
+    border: 2px solid #9d72c3;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .answers button:hover {
+    background-color: #9d72c3;
+    color: #fff;
+  }
+
+  .answers button.correct {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+  }
+
+  .answers button.wrong {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+  }
+
+  .answer-result {
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 1em;
+  }
+
+  #footer {
+    background: #f5f5f5;
+    padding: 3em 2em;
+    text-align: center;
+  }
+
+  #footer h3 {
+    color: #9d72c3;
+    margin-bottom: 1em;
+  }
+
+  #footer a {
+    color: #68c9a5;
+    text-decoration: none;
+  }
+
+  #footer a:hover {
+    color: #ec7bac;
+  }
+
+  #footer .social a {
+    color: #9d72c3;
+    margin: 0 0.5em;
+    font-size: 1.4em;
+    transition: 0.3s;
+  }
+
+  #footer .social a:hover {
+    color: #68c9a5;
+  }
+
+  #footer p {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 1em;
+  }
+
+  .final-score {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #28a745;
+    margin: 2em 0;
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="nav-container">
+    <a href="index.html" class="logo-container">
+      <img src="images/logoviva.png" alt="Viva Direitos">
+      <span>Viva Direitos</span>
+    </a>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="left-sidebar.html">Sobre</a></li>
+        <li><a href="right-sidebar.html">Projetos</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="no-sidebar.html">Desenvolvedoras</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="banner">
+  <h2>Teste seus conhecimentos sobre direitos e cidadania!</h2>
+</section>
+
+<div class="quiz-container">
+
+<div class="question-card">
+  <div class="question">1. O que são direitos humanos?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Direitos universais e fundamentais de todas as pessoas','Direitos humanos são universais e aplicáveis a todas as pessoas sem discriminação.')">Privilégios para alguns grupos</button>
+    <button onclick="checkAnswer(this,'Direitos universais e fundamentais de todas as pessoas','Direitos humanos são universais e aplicáveis a todas as pessoas sem discriminação.')">Direitos universais e fundamentais de todas as pessoas</button>
+    <button onclick="checkAnswer(this,'Direitos universais e fundamentais de todas as pessoas','Direitos humanos são universais e aplicáveis a todas as pessoas sem discriminação.')">Regras locais de cada país</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">2. Qual é o principal documento internacional sobre direitos humanos?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Declaração Universal dos Direitos Humanos','A Declaração Universal dos Direitos Humanos estabelece os direitos fundamentais de todas as pessoas.')">Carta Magna</button>
+    <button onclick="checkAnswer(this,'Declaração Universal dos Direitos Humanos','A Declaração Universal dos Direitos Humanos estabelece os direitos fundamentais de todas as pessoas.')">Declaração Universal dos Direitos Humanos</button>
+    <button onclick="checkAnswer(this,'Declaração Universal dos Direitos Humanos','A Declaração Universal dos Direitos Humanos estabelece os direitos fundamentais de todas as pessoas.')">Constituição Brasileira</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">3. A Constituição Brasileira garante quais direitos?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Direitos fundamentais e garantias individuais','A Constituição garante direitos fundamentais, sociais, culturais, econômicos e políticos a todos.')">Apenas direitos de voto</button>
+    <button onclick="checkAnswer(this,'Direitos fundamentais e garantias individuais','A Constituição garante direitos fundamentais, sociais, culturais, econômicos e políticos a todos.')">Direitos fundamentais e garantias individuais</button>
+    <button onclick="checkAnswer(this,'Direitos fundamentais e garantias individuais','A Constituição garante direitos fundamentais, sociais, culturais, econômicos e políticos a todos.')">Direitos para autoridades</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">4. Qual é a idade mínima para votar no Brasil?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'16 anos','No Brasil, o voto é facultativo aos 16 anos e obrigatório a partir dos 18.')">18 anos</button>
+    <button onclick="checkAnswer(this,'16 anos','No Brasil, o voto é facultativo aos 16 anos e obrigatório a partir dos 18.')">16 anos</button>
+    <button onclick="checkAnswer(this,'16 anos','No Brasil, o voto é facultativo aos 16 anos e obrigatório a partir dos 18.')">21 anos</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">5. O que é cidadania?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Conjunto de direitos e deveres de um indivíduo','Cidadania envolve direitos e deveres que garantem participação social e política.')">Possuir dinheiro</button>
+    <button onclick="checkAnswer(this,'Conjunto de direitos e deveres de um indivíduo','Cidadania envolve direitos e deveres que garantem participação social e política.')">Conjunto de direitos e deveres de um indivíduo</button>
+    <button onclick="checkAnswer(this,'Conjunto de direitos e deveres de um indivíduo','Cidadania envolve direitos e deveres que garantem participação social e política.')">Viver em uma cidade grande</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">6. O que significa democracia?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Governo do povo, pelo povo e para o povo','Democracia é um sistema em que todos participam das decisões através do voto e da lei.')">Governo de uma elite</button>
+    <button onclick="checkAnswer(this,'Governo do povo, pelo povo e para o povo','Democracia é um sistema em que todos participam das decisões através do voto e da lei.')">Governo do povo, pelo povo e para o povo</button>
+    <button onclick="checkAnswer(this,'Governo do povo, pelo povo e para o povo','Democracia é um sistema em que todos participam das decisões através do voto e da lei.')">Ditadura militar</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">7. Qual é a função do Ministério Público?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Defender a ordem jurídica e interesses sociais','O Ministério Público protege direitos e fiscaliza o cumprimento das leis.')">Criar leis</button>
+    <button onclick="checkAnswer(this,'Defender a ordem jurídica e interesses sociais','O Ministério Público protege direitos e fiscaliza o cumprimento das leis.')">Defender a ordem jurídica e interesses sociais</button>
+    <button onclick="checkAnswer(this,'Defender a ordem jurídica e interesses sociais','O Ministério Público protege direitos e fiscaliza o cumprimento das leis.')">Administrar cidades</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">8. Qual destes é um direito social?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Saúde','Saúde é um direito social garantido pela Constituição Brasileira.')">Saúde</button>
+    <button onclick="checkAnswer(this,'Saúde','Saúde é um direito social garantido pela Constituição Brasileira.')">Voto obrigatório</button>
+    <button onclick="checkAnswer(this,'Saúde','Saúde é um direito social garantido pela Constituição Brasileira.')">Posse de terras</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">9. Qual é o órgão internacional que protege direitos humanos?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'ONU','A Organização das Nações Unidas (ONU) promove a proteção dos direitos humanos no mundo.')">FMI</button>
+    <button onclick="checkAnswer(this,'ONU','A Organização das Nações Unidas (ONU) promove a proteção dos direitos humanos no mundo.')">ONU</button>
+    <button onclick="checkAnswer(this,'ONU','A Organização das Nações Unidas (ONU) promove a proteção dos direitos humanos no mundo.')">OIT</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">10. O que é violência doméstica?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Qualquer abuso dentro do ambiente familiar','Violência doméstica envolve abuso físico, psicológico ou sexual dentro do lar.')">Apenas agressão física</button>
+    <button onclick="checkAnswer(this,'Qualquer abuso dentro do ambiente familiar','Violência doméstica envolve abuso físico, psicológico ou sexual dentro do lar.')">Qualquer abuso dentro do ambiente familiar</button>
+    <button onclick="checkAnswer(this,'Qualquer abuso dentro do ambiente familiar','Violência doméstica envolve abuso físico, psicológico ou sexual dentro do lar.')">Discussão familiar</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">11. Qual a lei que combate a violência contra a mulher?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Lei Maria da Penha','A Lei Maria da Penha protege mulheres de violência doméstica.')">Lei do Voto Feminino</button>
+    <button onclick="checkAnswer(this,'Lei Maria da Penha','A Lei Maria da Penha protege mulheres de violência doméstica.')">Lei Maria da Penha</button>
+    <button onclick="checkAnswer(this,'Lei Maria da Penha','A Lei Maria da Penha protege mulheres de violência doméstica.')">Código Penal</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">12. Qual é o princípio da igualdade?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Todos são iguais perante a lei','A Constituição assegura que todos devem ser tratados igualmente.')">Igualdade só para ricos</button>
+    <button onclick="checkAnswer(this,'Todos são iguais perante a lei','A Constituição assegura que todos devem ser tratados igualmente.')">Todos são iguais perante a lei</button>
+    <button onclick="checkAnswer(this,'Todos são iguais perante a lei','A Constituição assegura que todos devem ser tratados igualmente.')">Igualdade apenas para cidadãos</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">13. O que significa pluralidade cultural?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Diversidade de culturas coexistindo','Pluralidade cultural reconhece a coexistência de diferentes tradições e culturas.')">Somente cultura popular</button>
+    <button onclick="checkAnswer(this,'Diversidade de culturas coexistindo','Pluralidade cultural reconhece a coexistência de diferentes tradições e culturas.')">Diversidade de culturas coexistindo</button>
+    <button onclick="checkAnswer(this,'Diversidade de culturas coexistindo','Pluralidade cultural reconhece a coexistência de diferentes tradições e culturas.')">Cultura de um país apenas</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">14. O que é intolerância religiosa?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Discriminação baseada na religião','Intolerância religiosa é prejudicar alguém por sua crença.')">Apoiar diferentes religiões</button>
+    <button onclick="checkAnswer(this,'Discriminação baseada na religião','Intolerância religiosa é prejudicar alguém por sua crença.')">Discriminação baseada na religião</button>
+    <button onclick="checkAnswer(this,'Discriminação baseada na religião','Intolerância religiosa é prejudicar alguém por sua crença.')">Respeito à religião</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">15. O que é direito à educação?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Todos têm direito a ensino gratuito e de qualidade','A educação é um direito fundamental e deve ser acessível a todos.')">Somente para ricos</button>
+    <button onclick="checkAnswer(this,'Todos têm direito a ensino gratuito e de qualidade','A educação é um direito fundamental e deve ser acessível a todos.')">Todos têm direito a ensino gratuito e de qualidade</button>
+    <button onclick="checkAnswer(this,'Todos têm direito a ensino gratuito e de qualidade','A educação é um direito fundamental e deve ser acessível a todos.')">Somente ensino superior</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">16. O que significa direito ao trabalho?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Todo cidadão tem direito a trabalhar em condições dignas','Todos têm direito a oportunidades de emprego justas, seguras e remuneradas.')">Somente para profissionais liberais</button>
+    <button onclick="checkAnswer(this,'Todo cidadão tem direito a trabalhar em condições dignas','Todos têm direito a oportunidades de emprego justas, seguras e remuneradas.')">Todo cidadão tem direito a trabalhar em condições dignas</button>
+    <button onclick="checkAnswer(this,'Todo cidadão tem direito a trabalhar em condições dignas','Todos têm direito a oportunidades de emprego justas, seguras e remuneradas.')">Apenas quem paga impostos</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">17. O que é liberdade de expressão?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Direito de se expressar sem censura','Liberdade de expressão permite que as pessoas compartilhem ideias sem medo de punição.')">Falar apenas em redes sociais</button>
+    <button onclick="checkAnswer(this,'Direito de se expressar sem censura','Liberdade de expressão permite que as pessoas compartilhem ideias sem medo de punição.')">Direito de se expressar sem censura</button>
+    <button onclick="checkAnswer(this,'Direito de se expressar sem censura','Liberdade de expressão permite que as pessoas compartilhem ideias sem medo de punição.')">Liberdade só em casa</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">18. O que é direito à saúde?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Acesso universal a serviços de saúde','Todos devem ter acesso a atendimento médico e prevenção de doenças.')">Acesso universal a serviços de saúde</button>
+    <button onclick="checkAnswer(this,'Acesso universal a serviços de saúde','Todos devem ter acesso a atendimento médico e prevenção de doenças.')">Somente hospitais privados</button>
+    <button onclick="checkAnswer(this,'Acesso universal a serviços de saúde','Todos devem ter acesso a atendimento médico e prevenção de doenças.')">Apenas medicamentos caros</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">19. O que significa participação política?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Envolver-se em decisões públicas','Cidadãos podem influenciar políticas e decisões do governo através do voto e do engajamento.')">Envolver-se em decisões públicas</button>
+    <button onclick="checkAnswer(this,'Envolver-se em decisões públicas','Cidadãos podem influenciar políticas e decisões do governo através do voto e do engajamento.')">Somente votar uma vez</button>
+    <button onclick="checkAnswer(this,'Envolver-se em decisões públicas','Cidadãos podem influenciar políticas e decisões do governo através do voto e do engajamento.')">Apenas acompanhar notícias</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">20. O que é diversidade?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Diferenças entre pessoas e grupos','Diversidade reconhece e respeita diferenças de cultura, gênero, etnia, religião e opinião.')">Diferenças entre pessoas e grupos</button>
+    <button onclick="checkAnswer(this,'Diferenças entre pessoas e grupos','Diversidade reconhece e respeita diferenças de cultura, gênero, etnia, religião e opinião.')">Apenas diferenças de idade</button>
+    <button onclick="checkAnswer(this,'Diferenças entre pessoas e grupos','Diversidade reconhece e respeita diferenças de cultura, gênero, etnia, religião e opinião.')">Uniformidade de opinião</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">21. O que é direito à liberdade religiosa?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Liberdade de escolher e praticar uma religião','Todos podem escolher suas crenças sem perseguição.')">Liberdade de escolher e praticar uma religião</button>
+    <button onclick="checkAnswer(this,'Liberdade de escolher e praticar uma religião','Todos podem escolher suas crenças sem perseguição.')">Obrigação de seguir uma religião</button>
+    <button onclick="checkAnswer(this,'Liberdade de escolher e praticar uma religião','Todos podem escolher suas crenças sem perseguição.')">Liberdade só para adultos</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">22. Qual é a função do Judiciário?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Aplicar a lei e julgar conflitos','O Judiciário interpreta a lei e garante a justiça.')">Aplicar a lei e julgar conflitos</button>
+    <button onclick="checkAnswer(this,'Aplicar a lei e julgar conflitos','O Judiciário interpreta a lei e garante a justiça.')">Criar leis</button>
+    <button onclick="checkAnswer(this,'Aplicar a lei e julgar conflitos','O Judiciário interpreta a lei e garante a justiça.')">Administrar cidades</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">23. O que é direito à moradia?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Garantia de habitação digna','Todos devem ter acesso a moradia adequada e segura.')">Garantia de habitação digna</button>
+    <button onclick="checkAnswer(this,'Garantia de habitação digna','Todos devem ter acesso a moradia adequada e segura.')">Somente casas próprias</button>
+    <button onclick="checkAnswer(this,'Garantia de habitação digna','Todos devem ter acesso a moradia adequada e segura.')">Alugar apartamentos caros</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">24. O que é direito à segurança?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Proteção contra violência e crimes','Todos têm direito a viver sem medo e com proteção das autoridades.')">Proteção contra violência e crimes</button>
+    <button onclick="checkAnswer(this,'Proteção contra violência e crimes','Todos têm direito a viver sem medo e com proteção das autoridades.')">Apenas polícia privada</button>
+    <button onclick="checkAnswer(this,'Proteção contra violência e crimes','Todos têm direito a viver sem medo e com proteção das autoridades.')">Segurança só em cidades grandes</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="question-card">
+  <div class="question">25. O que é direito ao meio ambiente?</div>
+  <div class="answers">
+    <button onclick="checkAnswer(this,'Ambiente saudável para todos','Todos têm direito a viver em um meio ambiente equilibrado e protegido.')">Ambiente saudável para todos</button>
+    <button onclick="checkAnswer(this,'Ambiente saudável para todos','Todos têm direito a viver em um meio ambiente equilibrado e protegido.')">Apenas áreas verdes privadas</button>
+    <button onclick="checkAnswer(this,'Ambiente saudável para todos','Todos têm direito a viver em um meio ambiente equilibrado e protegido.')">Construir sem restrições</button>
+  </div>
+  <div class="answer-result"></div>
+</div>
+
+<div class="final-score" id="finalScore"></div>
+
+</div>
+
+<script>
+let score = 0;
+
+function checkAnswer(button, correctAnswer, explanation) {
+  const answerResult = button.parentElement.nextElementSibling;
+  
+  if (!button.classList.contains('correct') && !button.classList.contains('wrong')) {
+    if (button.textContent === correctAnswer) {
+      button.classList.add('correct');
+      answerResult.textContent = "✔ Correto! " + explanation;
+      score++;
+    } else {
+      button.classList.add('wrong');
+      answerResult.textContent = "✖ Errado! " + explanation;
+      Array.from(button.parentElement.children).forEach(btn => {
+        if (btn.textContent === correctAnswer) {
+          btn.classList.add('correct');
+        }
+      });
+    }
+  }
+
+  document.getElementById('finalScore').textContent = "Pontuação: " + score + " / 25";
+}
+</script>
+</body>
+</html>

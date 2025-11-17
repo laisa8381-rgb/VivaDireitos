@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Notícias e Projetos — Fique por dentro das iniciativas e atualizações sobre direitos e igualdade.">
+  <title>Notícias e Projetos - Viva Direitos</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6d6a9.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      margin: 0;
+      background: #fff;
+    }
+
+    #header { 
+    background: #fff; 
+    border-bottom: 3px solid #ec7bac20; 
+    position: sticky; 
+    top: 0; 
+    z-index: 999; 
+    }
+
+    #header .logo-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.6em; 
+    text-decoration: none; 
+    }
+
+    #header .logo-container img { 
+    height: 80px; 
+    width: auto; 
+    }
+
+    #header .logo-container span { 
+    font-family: 'Dancing Script', cursive; 
+    font-size: 2em; 
+    color: #ec7bac; 
+    font-weight: 600; 
+    }
+
+    #nav ul { 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    gap: 1.5em; 
+    align-items: center; 
+    }
+
+    #nav ul li a { 
+    text-decoration: none; 
+    color: #9d72c3; 
+    font-weight: 600; 
+    transition: 0.3s; 
+    }
+
+    #nav ul li a:hover { 
+    color: #68c9a5; 
+    }
+
+    #banner { 
+    background: url('images/banner-noticias.jpg') no-repeat center center/cover; 
+    text-align: center; 
+    padding: 8em 1em; 
+    color: white; 
+    position: relative; 
+    }
+
+    #banner::after { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgb(253,253,253); 
+    z-index: 1; 
+    }
+
+    #banner h1, #banner p { 
+    position: relative; 
+    z-index: 2; 
+    }
+
+    #banner h1 { 
+    font-size: 2.8em; 
+    margin-bottom: 0.5em; 
+    }
+
+    #banner p { 
+    font-size: 1.3em; 
+    }
+
+    section { 
+    padding: 4em 2em; 
+    max-width: 1200px; 
+    margin: auto; 
+    }
+
+    h2 { 
+    color: #9d72c3; 
+    margin-bottom: 1em; 
+    text-align: center; 
+    }
+
+    p { 
+    color: #555; 
+    line-height: 1.7; 
+    margin-bottom: 1.5em; 
+    }
+
+    .grid { 
+    display: grid; 
+    gap: 2em; 
+    }
+    @media(min-width: 768px){ 
+    .grid-2 { 
+    grid-template-columns: 1fr 1fr; } 
+    .grid-3 { 
+    grid-template-columns: repeat(3,1fr); } 
+    }
+
+    .card { 
+    background: #f9f9f9; 
+    padding: 2em 1.5em; 
+    border-radius: 12px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    transition: 0.3s; 
+    }
+
+    .card:hover { 
+    background: #fff; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+    }
+
+    .card i { 
+    font-size: 2em; 
+    color: #ec7bac; 
+    margin-bottom: 0.5em; 
+    }
+
+    .card h3 { 
+    margin-bottom: 0.5em; 
+    color: #333; 
+    }
+
+    .card p { 
+    font-size: 0.95em; 
+    }
+
+    #footer { 
+    background: #f5f5f5; 
+    padding: 3em 2em; 
+    text-align: center; 
+    }
+
+    #footer h3 { 
+    color: #9d72c3; 
+    margin-bottom: 1em; 
+    }
+
+    #footer a { 
+    color: #68c9a5; 
+    text-decoration: none; 
+    }
+
+    #footer a:hover { 
+    color: #ec7bac; 
+    }
+
+    #footer .social a { 
+    color: #9d72c3; 
+    margin: 0 0.5em; 
+    font-size: 1.4em; 
+    transition: 0.3s; 
+    }
+
+    #footer .social a:hover { 
+    color: #68c9a5; 
+    }
+
+    #footer p { 
+    font-size: 0.9em; 
+    color: #666; 
+    margin-top: 1em; }
+
+    .button { 
+    background-color: #68c9a5; 
+    color: white; 
+    padding: 0.8em 1.8em; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: 0.3s; 
+    }
+    .button:hover { background-color: #9d72c3; }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:0.2em 2em;">
+      <a href="index.html" class="logo-container">
+        <img src="images/logoviva.png" alt="Viva Direitos">
+        <span>Viva Direitos</span>
+      </a>
+      <nav id="nav">
+         <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="left-sidebar.html">Sobre</a></li>
+        <li><a href="right-sidebar.html">Projetos</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="no-sidebar.html">Desenvolvedoras</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="banner">
+    <h1>Notícias e Projetos</h1>
+    <p>Fique por dentro das iniciativas e atualizações sobre direitos e igualdade</p>
+  </section>
+
+  <section>
+    <h2>Últimas Notícias</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <i class="fas fa-newspaper"></i>
+        <h3>Brasil responsabilizado por desaparecimento forçado de defensor rural</h3>
+        <p>O Corte Interamericana de Direitos Humanos declarou que o Estado brasileiro foi responsável pelo desaparecimento forçado de Almir Muniz da Silva, defensor rural da Paraíba. <a href="https://www.corteidh.or.cr/docs/comunicados/cp_17_2025_ENG.pdf" target="_blank">Leia mais</a></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-newspaper"></i>
+        <h3>Brasil e vítimas de violência policial: novas decisões internacionais</h3>
+        <p>Organizações de direitos humanos pedem ao Brasil o cumprimento de decisões da CIDH sobre execuções por polícia. <a href="https://www.hrw.org/news/2024/03/15/brazil-comply-rulings-police-violence" target="_blank">Leia mais</a></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-newspaper"></i>
+        <h3>Brasil arquiva compromisso e reafirma liberdade de expressão perante a OEA</h3>
+        <p>O Brasil reafirmou compromisso com liberdade de expressão em visita de relator da Organização dos Estados Americanos. <a href="https://www.gov.br/secom/en/latest-news/2025/02/brazil-reaffirms-commitment-to-freedom-of-expression-during-oas-rapporteur2019s-work-visit" target="_blank">Leia mais</a></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-newspaper"></i>
+        <h3>Tribunal define obrigação estatal de agir contra mudanças climáticas</h3>
+        <p>O Corte Interamericana de Direitos Humanos emitiu opinião consultiva afirmando que os Estados têm dever legal de mitigar as mudanças climáticas. <a href="https://www.euronews.com/green/2025/07/04/latin-america-s-top-human-rights-court-says-countries-have-a-duty-to-act-on-climate-change" target="_blank">Leia mais</a></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-newspaper"></i>
+        <h3>União Europeia aprova investigação contínua sobre violações no Afeganistão</h3>
+        <p>O Conselho de Direitos Humanos da ONU aprovou mecanismo para monitorar violações de direitos humanos no Afeganistão, com foco em mulheres e meninas. <a href="https://apnews.com/article/549b68978d1b1cd24db7406f9061f01e" target="_blank">Leia mais</a></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-newspaper"></i>
+        <h3>Países europeus desafiam autoridade da Corte Europeia de Direitos Humanos</h3>
+        <p>Nove países assinaram carta aberta pedindo revisão da atuação da Corte Europeia de Direitos Humanos, levantando riscos ao sistema de proteção de direitos humanos. <a href="https://www.lemonde.fr/en/international/article/2025/05/27/immigration-nine-european-countries‑seek‑to‑weaken‑the‑european‑court‑of‑human‑rights_6741721_4.html" target="_blank">Leia mais</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projetos</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <i class="fas fa-project-diagram"></i>
+        <h3>Projeto Justiça Global - Proteção de Defensores</h3>
+        <p>Justiça Global desenvolve metodologias para proteger defensores dos direitos humanos no Brasil. <a href="https://brazilfoundation.org/en/project/justica-global-brasil/" target="_blank">Saiba mais</a></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-project-diagram"></i>
+        <h3>IDDH - Educação e Advocacy em Direitos Humanos</h3>
+        <p>Instituto de Desenvolvimento e Direitos Humanos oferece treinamento, pesquisa e articulação para defensores e educadores de direitos humanos no Brasil e América Latina. <a href="https://iddh.org.br/en/" target="_blank">Saiba mais</a></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-project-diagram"></i>
+        <h3>Inter - American Commission Brazil Project</h3>
+        <p>Projeto da Comissão Interamericana de Direitos Humanos e da universidade Brown que documenta abusos de direitos humanos no regime militar brasileiro e os mecanismos de reparação. <a href="https://library.brown.edu/create/iachrbrazil/" target="_blank">Saiba mais</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <h3>Fale Conosco</h3>
+    <p><a href="mailto:contato@vivadireitos.org">contato@vivadireitos.org</a></p>
+    <div class="social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>© 2025 Viva Direitos — Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
